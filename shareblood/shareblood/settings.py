@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     # third party apps
     'cities_light',
     'custom_user',
+    'simple_history',
     'south',
     # local apps
     'account',
@@ -52,6 +53,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'simple_history.middleware.HistoryRequestMiddleware',
 )
 
 ROOT_URLCONF = 'shareblood.urls'
