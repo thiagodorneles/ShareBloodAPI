@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     # local apps
     'account',
     'donation',
+    'location',
 )
 
 MIDDLEWARE_CLASSES = (

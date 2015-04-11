@@ -36,4 +36,4 @@ class CustomAccount(AbstractEmailUser):
     about = models.TextField(null=True)
     blood_type = models.CharField(max_length=2, choices=constants.BLOOD_TYPES)
     role = models.ForeignKey(Group, null=True)
-    #location = models.ForeignKey('location.Location')
+    location = models.ForeignKey('location.Location')

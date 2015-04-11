@@ -4,3 +4,15 @@ shareblood.location.models
 """
 
 from django.db import models
+
+from cities_light.models import City, Country, Region
+
+class Location(models.Model):
+    country = models.ForeignKey(Country, null=True)
+    state = models.ForeignKey(Region, null=True)
+    city = models.ForeignKey(City, null=True)
+    zipcode = models.CharField(null=True, max_length=255)
+    street = models.CharField(null=True, max_length=255)
+    neighborhood = models.CharField(null=True, max_length=255)
+    latitude = models.BigIntegerField()
+    longitude = models.BigIntegerField()
