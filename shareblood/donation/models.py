@@ -14,6 +14,8 @@ class Donation(models.Model):
     donated = models.IntegerField(null=True, blank=True)
     start_date = models.DateField()
     end_date = models.DateField()
+    owner = models.ForeignKey('account.CustomAccount', related_name='owner_donation')
+    blood_bank = models.ForeignKey('account.CustomAccount', related_name='blood_bank_donation')
 
 
 class FavoriteBloodTypes(models.Model):
