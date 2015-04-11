@@ -35,5 +35,5 @@ class CustomAccount(AbstractEmailUser):
     image = models.URLField(default=DEFAULT_URL_IMAGE, blank=True)
     about = models.TextField(null=True)
     blood_type = models.CharField(max_length=2, choices=constants.BLOOD_TYPES)
-    role = models.ForeignKey(Group)
+    role = models.ForeignKey(Group, null=True)
     #location = models.ForeignKey('location.Location')

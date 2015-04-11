@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # third party apps
+    'cities_light',
     'custom_user',
     'south',
     # local apps
@@ -88,3 +89,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'account.CustomAccount'
+
+SOUTH_MIGRATION_MODULES = {
+    'cities_light': 'cities_light.south_migrations',
+}
+
+CITIES_LIGHT_INCLUDE_COUNTRIES = ['BR']
