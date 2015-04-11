@@ -13,7 +13,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from custom_user.models import AbstractEmailUser
 
-from shareblood.constants import BLOOD_TYPES
+from shareblood import constants
 
 
 GENDER_CHOICES = (('m', _('Masculino')),
@@ -34,6 +34,6 @@ class CustomAccount(AbstractEmailUser):
     site = models.CharField(max_length=255, null=True, blank=True)
     image = models.URLField(default=DEFAULT_URL_IMAGE, blank=True)
     about = models.TextField(null=True)
-    blood_type = models.CharField(max_length=2, choices=BLOOD_TYPES)
+    blood_type = models.CharField(max_length=2, choices=constants.BLOOD_TYPES)
     role = models.ForeignKey(Group)
     #location = models.ForeignKey('location.Location')
