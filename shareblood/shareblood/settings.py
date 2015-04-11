@@ -39,8 +39,9 @@ INSTALLED_APPS = (
     # third party apps
     'cities_light',
     'custom_user',
+    'rest_framework',
     'simple_history',
-    'south',
+    'south',i
     # local apps
     'account',
     'donation',
