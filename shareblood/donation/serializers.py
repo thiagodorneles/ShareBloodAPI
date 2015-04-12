@@ -29,7 +29,7 @@ class DonationSerializer(serializers.ModelSerializer):
     donated = serializers.SerializerMethodField()
     favorite_blood_types =  FavoriteBloodTypeSerializer(many=True, read_only=True)
 
-    def get_total_donated(self, obj):
+    def get_donated(self, obj):
         return obj.total_donated()
 
     class Meta:
