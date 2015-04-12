@@ -24,7 +24,7 @@ class Donation(models.Model):
 
 class DonationHistory(models.Model):
     donator = models.ForeignKey('account.CustomAccount')
-    donation = models.ForeignKey(Donation)
+    donation = models.ForeignKey(Donation, related_name='donations')
     history = HistoricalRecords()
 
     class Meta:

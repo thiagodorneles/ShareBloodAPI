@@ -4,9 +4,15 @@ shareblood.donation.serializers
 """
 
 from rest_framework import serializers
+
+from account.serializers import CustomAccountSerializer
+
 from .models import Donation, DonationHistory
 
+
 class DonationHistorySerializer(serializers.ModelSerializer):
+    donator = CustomAccountSerializer()
+
     class Meta:
         model = DonationHistory
         fields = ('donator', )
