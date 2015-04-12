@@ -4,6 +4,6 @@ from .views import AccountView
 
 
 router = DefaultRouter()
-router.register(r'list', AccountView, 'list')
+router.register(r'', AccountView, 'account')
 
 urlpatterns = router.urls
