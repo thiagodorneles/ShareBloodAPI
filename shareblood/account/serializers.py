@@ -4,7 +4,7 @@ shareblood.account.serializers
 """
 
 from rest_framework import serializers
-from account.models import CustomAccount
+from .models import CustomAccount
 
 
 class CustomAccountSerializer(serializers.ModelSerializer):

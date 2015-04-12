@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from .models import Location
+from .serializers import LocationSerializer
+
+
+class LocationView(viewsets.ModelViewSet):
+    serializer_class = LocationSerializer
+    model = Location
+
+    def get_queryset(self):
+        return Location.objects.all()
