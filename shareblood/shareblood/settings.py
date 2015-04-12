@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     # third party apps
     'cities_light',
     'custom_user',
+    'django_extensions',
     'rest_framework',
     'simple_history',
     'south',
