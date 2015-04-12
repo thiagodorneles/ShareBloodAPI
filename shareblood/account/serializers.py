@@ -15,7 +15,7 @@ class CustomAccountSerializer(serializers.ModelSerializer):
         write_only_fields = ('password',)
 
     def update(self, instance, validated_data):
-        instance.set_password(validated_data.get('password'), instance.password)
+        instance.set_password(validated_data.get('password', instance.password))
         return instance
 
     def create(self, validated_data):
