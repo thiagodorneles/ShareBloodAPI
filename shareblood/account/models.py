@@ -23,9 +23,6 @@ GENDER_CHOICES = (('m', _('Masculino')),
 DEFAULT_URL_IMAGE = 'http://www.randomimage.com/random.jpg'
 
 class CustomAccount(AbstractEmailUser):
-    """
-    CustomAccount class.
-    """
     REQUIRED_FIELDS = ['name', 'gender', 'birth_date']
 
     name = models.CharField(max_length=255)
