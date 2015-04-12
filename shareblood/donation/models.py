@@ -21,10 +21,15 @@ class Donation(models.Model):
     blood_bank = models.ForeignKey('account.CustomAccount', related_name='blood_bank_donation')
     history = HistoricalRecords()
 
+
 class DonationHistory(models.Model):
     donator = models.ForeignKey('account.CustomAccount')
     donation = models.ForeignKey(Donation)
     history = HistoricalRecords()
+
+    class Meta:
+        unique_together = ('donator', 'donation')
+
 
 class FavoriteBloodTypes(models.Model):
     blood_type = models.CharField(max_length=2, choices=constants.BLOOD_TYPES)
