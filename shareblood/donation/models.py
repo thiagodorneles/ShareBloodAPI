@@ -21,6 +21,9 @@ class Donation(models.Model):
     blood_bank = models.ForeignKey('account.CustomAccount', related_name='blood_bank_donation')
     history = HistoricalRecords()
 
+    @property
+    def donation__history(self):
+        return list(DonationHistory.objects.filter(donation__id=self.id))
 
 class DonationHistory(models.Model):
     donator = models.ForeignKey('account.CustomAccount')
