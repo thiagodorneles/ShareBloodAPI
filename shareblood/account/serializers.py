@@ -20,4 +20,7 @@ class CustomAccountSerializer(serializers.ModelSerializer):
         return instance
 
     def create(self, validated_data):
-        return CustomAccount.objects.create(**validated_data)
+        user = CustomAccount.objects.create(**validated_data)
+        user.set_password(validated_data.get('password'))
+        user.save()
+        return user
