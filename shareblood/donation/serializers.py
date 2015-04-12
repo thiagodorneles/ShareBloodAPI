@@ -28,6 +28,8 @@ class DonationSerializer(serializers.ModelSerializer):
     donations = DonationHistorySerializer(many=True, read_only=True)
     donated = serializers.SerializerMethodField()
     favorite_blood_types =  FavoriteBloodTypeSerializer(many=True, read_only=True)
+    owner = CustomAccountSerializer()
+    blood_bank = CustomAccountSerializer()
 
     def get_donated(self, obj):
         return obj.total_donated()
