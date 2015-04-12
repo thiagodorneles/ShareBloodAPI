@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'custom_user',
     'rest_framework',
     'simple_history',
-    'south',i
+    'south',
     # local apps
     'account',
     'donation',
@@ -99,3 +99,9 @@ SOUTH_MIGRATION_MODULES = {
 }
 
 CITIES_LIGHT_INCLUDE_COUNTRIES = ['BR']
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
