@@ -14,5 +14,5 @@ class Location(models.Model):
     zipcode = models.CharField(null=True, blank=True, max_length=255)
     street = models.CharField(null=True, blank=True, max_length=255)
     neighborhood = models.CharField(null=True, blank=True, max_length=255)
-    latitude = models.DecimalField(max_digits=20, decimal_places=8)
-    longitude = models.DecimalField(max_digits=20, decimal_places=8)
+    latitude = models.DecimalField(max_digits=20, decimal_places=7)
+    longitude = models.DecimalField(max_digits=20, decimal_places=7)
