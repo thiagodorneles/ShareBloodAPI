@@ -7,7 +7,13 @@ from rest_framework import serializers
 
 from account.serializers import CustomAccountSerializer
 
-from .models import Donation, DonationHistory
+from .models import Donation, DonationHistory, FavoriteBloodType
+
+
+class FavoriteBloodTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FavoriteBloodType
+        fields = ('blood_type', )
 
 
 class DonationHistorySerializer(serializers.ModelSerializer):
@@ -20,8 +26,10 @@ class DonationHistorySerializer(serializers.ModelSerializer):
 
 class DonationSerializer(serializers.ModelSerializer):
     donations = DonationHistorySerializer(many=True, read_only=True)
+    favorite_blood_types =  FavoriteBloodTypeSerializer(many=True, read_only=True)
 
     class Meta:
         model = Donation
-        fields = ('favored', 'needed', 'donated', 'start_date', 'end_date',
-                  'description', 'owner', 'blood_bank', 'donations')
+        fields = ('favored', 'needed', 'donated',
+                  'start_date', 'end_date', 'description',
+                  'owner', 'blood_bank', 'donations', 'favorite_blood_types', )

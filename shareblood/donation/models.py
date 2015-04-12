@@ -31,7 +31,7 @@ class DonationHistory(models.Model):
         unique_together = ('donator', 'donation')
 
 
-class FavoriteBloodTypes(models.Model):
+class FavoriteBloodType(models.Model):
     blood_type = models.CharField(max_length=2, choices=constants.BLOOD_TYPES)
     donation = models.ForeignKey(Donation)
 
