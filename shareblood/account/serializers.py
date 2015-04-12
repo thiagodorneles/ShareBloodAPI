@@ -11,7 +11,7 @@ class CustomAccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomAccount
         fields = ('name', 'email', 'gender', 'role', 'birth_date', 'site',
-                  'image', 'about', 'blood_type', 'location')
+                  'image', 'about', 'blood_type', 'location', 'password')
         write_only_fields = ('password',)
 
     def update(self, instance, validated_data):
